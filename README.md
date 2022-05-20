@@ -1,4 +1,4 @@
-<img src="app/src/main/res/drawable/icon.png" width="100"></img>
+<img src="icon.png" width="100"></img>
 # FloatWindowCore 浮動視窗核心
 Core for floating Window app for Android\
 ![Alt text](Demonstration.png)
@@ -256,4 +256,4 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 ## License
-使用[MIT license](https://github.com/jack850628/FloatWindow-Core/blob/master/LICENSE)
+使用[MIT license](https://github.com/jack850628/FloatWindow-Core/blob/main/LICENSE)
