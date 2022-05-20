@@ -2,7 +2,7 @@
 # FloatWindowCore 浮動視窗核心
 Core for floating Window app for Android\
 ![Alt text](Demonstration.png)
-\
+
 
 這套核心應用在[FloatWindow 浮動視窗](https://github.com/jack850628/FloatWindow)中。
 
