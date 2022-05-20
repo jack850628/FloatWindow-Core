@@ -141,8 +141,8 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
             }
         }
     }
-    public State nowState = State.HIDE;//當前狀態
-    public State previousState = null;//前一次的狀態
+    private State nowState = State.HIDE;//當前狀態
+    private State previousState = null;//前一次的狀態
 
 
     /**
@@ -1865,6 +1865,22 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
      */
     public void showPage(int position){
         menuList.showPage(position);
+    }
+
+    /**
+     * 取得視窗當下的狀態
+     * @return 視窗當下的狀態
+     */
+    public State getCurrentState(){
+        return nowState;
+    }
+
+    /**
+     * 取得視窗上一個狀態
+     * @return 視窗上一個狀態
+     */
+    public State getPreviousState(){
+        return previousState;
     }
 
 

@@ -29,12 +29,12 @@ public class FullscreenWindowActivity extends AppCompatActivity {
             return;
         }
         if(Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP){
-            if(ws.nowState != WindowStruct.State.FULLSCREEN){
+            if(ws.getCurrentState() != WindowStruct.State.FULLSCREEN){
                 ws.fullscreen();
                 return;
             }
         }else{
-            if(ws.nowState != WindowStruct.State.FULLSCREEN){//防止一些極端操作，例如在進入全螢幕的動畫剛跑完時，馬上按關閉視窗的按鈕
+            if(ws.getCurrentState() != WindowStruct.State.FULLSCREEN){//防止一些極端操作，例如在進入全螢幕的動畫剛跑完時，馬上按關閉視窗的按鈕
                 finish();
                 return;
             }
@@ -74,7 +74,7 @@ public class FullscreenWindowActivity extends AppCompatActivity {
             WindowStruct ws = WindowManager.getWindowStruct(windowNumber);//當使用者是按X按鈕關視窗時，ws會為null
             if(ws != null) {
                 ws.removeWindowTitleChangeListener(onWindowTitleChangeListener);
-                if (ws.nowState == WindowStruct.State.FULLSCREEN) {//當使用者是是從多工畫面關掉視窗時，ws.nowState會等於WindowStruct.State.FULLSCREEN
+                if (ws.getCurrentState() == WindowStruct.State.FULLSCREEN) {//當使用者是是從多工畫面關掉視窗時，ws.nowState會等於WindowStruct.State.FULLSCREEN
                     ws.close();
                 }
             }
