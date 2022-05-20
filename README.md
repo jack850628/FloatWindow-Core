@@ -15,7 +15,7 @@ Core for floating Window app for Android\
 1. 下載[FloatWindow模組](https://github.com/jack850628/FloatWindow-Core/releases/)
 
 2. 引入aar檔到專案中 
-    - 先到專案的app資料夾中建立libs
+    - 先到專案的app資料夾中建立libs \
     <img src="說明1.png" width="300"></img>
     - 然後將floatwindow-release.aar複製到libs內
 
