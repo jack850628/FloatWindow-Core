@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FloatWindow-Core</string>
+    <string name="hello">hello</string>
+    <string name="float_window_example">FloatWindow 范例</string>
+    <string name="window_control">窗口操控</string>
+    <string name="window_control_win_title">按住我可以移动弹出的视窗</string>
+    <string name="window_control_win_content">点击这个视窗的按钮，可以显示/隐藏弹出视窗上的对应按钮。</string>
+    <string name="popup_window">弹出视窗</string>
+</resources>

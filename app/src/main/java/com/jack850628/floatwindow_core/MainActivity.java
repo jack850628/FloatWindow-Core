@@ -1,101 +1,84 @@
 package com.jack850628.floatwindow_core;
 
-import androidx.annotation.RequiresApi;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.NavigationUI;
 
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
-import android.widget.EditText;
-import android.widget.TextView;
 
-import com.jack8.floatwindow.Window.WindowStruct;
-
-import java.util.Map;
+import com.google.android.material.navigation.NavigationView;
+import com.jack850628.floatwindow_core.Utilities.RequestPermission;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+    private NavHostFragment navHostFragment;
+    private NavController navController;
+    private DrawerLayout drawerLayout;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M&&!Settings.canDrawOverlays(MainActivity.this))
-            startActivityForResult(new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-                    Uri.parse("package:" + MainActivity.this.getPackageName())), 1);
-        else {
-            startFloatWindow();
-        }
+        new RequestPermission(this, new RequestPermission.Callback() {
+            @Override
+            public void callback(String[] success, String[] refuse) {
+                if(refuse.length == 0)
+                    startFloatWindow();
+                else
+                    finish();
+            }
+        }).resultPermission();
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+
+        drawerLayout = findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+
+        actionBarDrawerToggle.syncState();
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+
+        ((NavigationView)findViewById(R.id.nav_view)).setNavigationItemSelectedListener(this);
 
     }
     private void startFloatWindow(){
-        findViewById(R.id.hello).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //建立一個hello world的FloatWindow視窗
-                new WindowStruct.Builder(MainActivity.this, (WindowManager) getSystemService(Context.WINDOW_SERVICE)).
-                        windowPages(new int[]{R.layout.hello_page_1, R.layout.hello_page_2}).
-                        windowPageTitles(new String[]{"Hello FloatWindow","Submit Hello"}).
-                        constructionAndDeconstructionWindow(new WindowStruct.constructionAndDeconstructionWindow() {
-                            String helloString = "";
-                            @Override
-                            public void Construction(Context context, final View view, int i, Map<String, Object> args, final WindowStruct windowStruct) {
-                                switch (i){
-                                    case 0:
-                                        view.findViewById(R.id.get_hello).setOnClickListener(new View.OnClickListener() {
-                                            @Override
-                                            public void onClick(View v) {
-                                                windowStruct.showPage(1);
-                                            }
-                                        });
-                                        break;
-                                    case 1:
-                                        view.findViewById(R.id.submit).setOnClickListener(new View.OnClickListener() {
-                                            EditText helloEdit = view.findViewById(R.id.hello_string);
-                                            @Override
-                                            public void onClick(View v) {
-                                                helloString = helloEdit.getText().toString();
-                                                windowStruct.showPage(0);
-                                            }
-                                        });
-                                        break;
-                                }
-                            }
-
-                            @Override
-                            public void Deconstruction(Context context, View view, int i, WindowStruct windowStruct) {
-
-                            }
-
-                            @Override
-                            public void onResume(Context context, View view, int i, WindowStruct windowStruct) {
-                                if(i == 0)
-                                    ((TextView)view.findViewById(R.id.hello_string_view)).setText("Hello " + helloString);
-                            }
-
-                            @Override
-                            public void onPause(Context context, View view, int i, WindowStruct windowStruct) {
-
-                            }
-                        }).show();
-
-            }
-        });
+        navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
+        navController = navHostFragment.getNavController();
+//        NavigationUI.setupActionBarWithNavController(this, navController);
     }
-    @RequiresApi(api = Build.VERSION_CODES.M)
+
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1) {
-            if (Settings.canDrawOverlays(this))
-                startFloatWindow();
-            else
-                finish();
+    public boolean onOptionsItemSelected(MenuItem menuItem){
+        switch (menuItem.getItemId()){
+            case android.R.id.home:
+                navController.navigateUp();
+                return true;
         }
+        return super.onOptionsItemSelected(menuItem);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.float_window_example:
+                navController.navigate(R.id.changeWindowColorPage);
+                drawerLayout.closeDrawers();
+                return true;
+            case R.id.window_control:
+                navController.navigate(R.id.windowControl);
+                drawerLayout.closeDrawers();
+                return true;
+        }
+        return false;
     }
 }

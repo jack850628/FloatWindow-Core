@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_map"
+    app:startDestination="@id/homePage">
+    <fragment
+        android:id="@+id/homePage"
+        android:name="com.jack850628.floatwindow_core.HomePage"
+        android:label="FloatWindow 範例"
+        tools:layout="@layout/fragment_home_page"/>
+    <fragment
+        android:id="@+id/changeWindowColorPage"
+        android:name="com.jack850628.floatwindow_core.ChangeWindowColorPage"
+        android:label="fragment_change_window_color_page"
+        tools:layout="@layout/fragment_change_window_color_page" />
+    <fragment
+        android:id="@+id/windowControl"
+        android:name="com.jack850628.floatwindow_core.WindowControl"
+        android:label="fragment_window_control"
+        tools:layout="@layout/fragment_window_control" />
+</navigation>

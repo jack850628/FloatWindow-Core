@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">FloatWindow-Core</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="hello">hello</string>
+    <string name="float_window_example">FloatWindow example</string>
+    <string name="window_control">Window control</string>
+    <string name="window_control_win_title">Press and hold I can move the popup window</string>
+    <string name="window_control_win_content">Click the button of this window to show/hide the corresponding button on the popup window.</string>
+    <string name="popup_window">popup window</string>
 </resources>

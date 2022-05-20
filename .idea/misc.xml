@@ -3,9 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/jack8/AndroidStudioProjects/FloatWindowCore/app/src/main/res/layout/activity_main.xml" value="1.5" />
+        <entry key="..\:/Users/jack8/AndroidStudioProjects/FloatWindowCore/app/src/main/res/drawable/ic_menu.xml" value="0.1175" />
+        <entry key="..\:/Users/jack8/AndroidStudioProjects/FloatWindowCore/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/jack8/AndroidStudioProjects/FloatWindowCore/app/src/main/res/layout/app_bar_main.xml" value="0.161231884057971" />
+        <entry key="..\:/Users/jack8/AndroidStudioProjects/FloatWindowCore/app/src/main/res/layout/content_main.xml" value="0.161231884057971" />
+        <entry key="..\:/Users/jack8/AndroidStudioProjects/FloatWindowCore/app/src/main/res/layout/fragment_blank.xml" value="0.161231884057971" />
+        <entry key="..\:/Users/jack8/AndroidStudioProjects/FloatWindowCore/app/src/main/res/layout/fragment_window_control.xml" value="0.165" />
         <entry key="..\:/Users/jack8/AndroidStudioProjects/FloatWindowCore/app/src/main/res/layout/hello_page_1.xml" value="0.375" />
         <entry key="..\:/Users/jack8/AndroidStudioProjects/FloatWindowCore/app/src/main/res/layout/hello_page_2.xml" value="0.3351449275362319" />
+        <entry key="..\:/Users/jack8/AndroidStudioProjects/FloatWindowCore/app/src/main/res/layout/home_page.xml" value="0.161231884057971" />
+        <entry key="..\:/Users/jack8/AndroidStudioProjects/FloatWindowCore/app/src/main/res/layout/nav_header_main.xml" value="0.161231884057971" />
+        <entry key="..\:/Users/jack8/AndroidStudioProjects/FloatWindowCore/app/src/main/res/menu/activity_main_drawer.xml" value="0.275" />
         <entry key="..\:/Users/jack8/AndroidStudioProjects/FloatWindowCore/floatwindow/src/main/res/drawable/micro_window.xml" value="0.1935" />
         <entry key="..\:/Users/jack8/AndroidStudioProjects/FloatWindowCore/floatwindow/src/main/res/layout/hide_menu_item.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/jack8/AndroidStudioProjects/FloatWindowCore/floatwindow/src/main/res/layout/window.xml" value="0.75" />
