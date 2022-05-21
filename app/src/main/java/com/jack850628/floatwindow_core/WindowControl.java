@@ -3,6 +3,7 @@ package com.jack850628.floatwindow_core;
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -32,6 +33,50 @@ public class WindowControl extends Fragment {
             WindowStruct.SIZE_BAR |
             WindowStruct.FULLSCREEN_BUTTON;
     private float H =- 1,W =- 1;
+
+    private View.OnClickListener controlWindowState = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            if(windowStruct == null) return;
+            if(view.getId() == R.id.hide_btn){
+                windowStruct.hide();
+            }else if(view.getId() == R.id.mini_btn){
+                windowStruct.mini();
+            }else if(view.getId() == R.id.general_btn){
+                windowStruct.general();
+            }else if(view.getId() == R.id.max_btn){
+                windowStruct.max();
+            }else if(view.getId() == R.id.fullscreen_btn){
+                windowStruct.fullscreen();
+            }else if(view.getId() == R.id.close_btn){
+                windowStruct.close();
+            }
+        }
+    };
+    private View.OnClickListener changeWindowController = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            if(windowStruct == null) return;
+            if(view.getId() == com.jack8.floatwindow.R.id.title){
+                showObj ^= WindowStruct.TITLE_BAR_AND_BUTTONS;
+            }else if(view.getId() == com.jack8.floatwindow.R.id.menu){
+                showObj ^= WindowStruct.MENU_BUTTON;
+            }else if(view.getId() == com.jack8.floatwindow.R.id.hide){
+                showObj ^= WindowStruct.HIDE_BUTTON;
+            }else if(view.getId() == com.jack8.floatwindow.R.id.mini){
+                showObj ^= WindowStruct.MINI_BUTTON;
+            }else if(view.getId() == com.jack8.floatwindow.R.id.max){
+                showObj ^= WindowStruct.MAX_BUTTON;
+            }else if(view.getId() == com.jack8.floatwindow.R.id.fullscreen){
+                showObj ^= WindowStruct.FULLSCREEN_BUTTON;
+            }else if(view.getId() == com.jack8.floatwindow.R.id.close_button){
+                showObj ^= WindowStruct.CLOSE_BUTTON;
+            }else if(view.getId() == com.jack8.floatwindow.R.id.size){
+                showObj ^= WindowStruct.SIZE_BAR;
+            }
+            windowStruct.setDisplayObject(showObj);
+        }
+    };
 
 
     public WindowControl() {
@@ -63,6 +108,7 @@ public class WindowControl extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(getString(R.string.window_control));
         return inflater.inflate(R.layout.fragment_window_control, container, false);
     }
 
@@ -90,15 +136,15 @@ public class WindowControl extends Fragment {
                         .show();
             }
         });
+        pageView.findViewById(R.id.hide_btn).setOnClickListener(controlWindowState);
+        pageView.findViewById(R.id.mini_btn).setOnClickListener(controlWindowState);
+        pageView.findViewById(R.id.general_btn).setOnClickListener(controlWindowState);
+        pageView.findViewById(R.id.max_btn).setOnClickListener(controlWindowState);
+        pageView.findViewById(R.id.fullscreen_btn).setOnClickListener(controlWindowState);
+        pageView.findViewById(R.id.close_btn).setOnClickListener(controlWindowState);
+
         WindowFrom windowFrom = pageView.findViewById(R.id.window);
-        windowFrom.findViewById(com.jack8.floatwindow.R.id.title).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(windowStruct == null) return;
-                showObj ^= WindowStruct.TITLE_BAR_AND_BUTTONS;
-                windowStruct.setDisplayObject(showObj);
-            }
-        });
+        windowFrom.findViewById(com.jack8.floatwindow.R.id.title).setOnClickListener(changeWindowController);
         ((TextView)windowFrom.findViewById(com.jack8.floatwindow.R.id.title)).setText(getString(R.string.window_control_win_title));
         windowFrom.findViewById(com.jack8.floatwindow.R.id.title).setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -120,14 +166,7 @@ public class WindowControl extends Fragment {
                 return false;
             }
         });
-        windowFrom.findViewById(com.jack8.floatwindow.R.id.size).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(windowStruct == null) return;
-                showObj ^= WindowStruct.SIZE_BAR;
-                windowStruct.setDisplayObject(showObj);
-            }
-        });
+        windowFrom.findViewById(com.jack8.floatwindow.R.id.size).setOnClickListener(changeWindowController);
         windowFrom.findViewById(com.jack8.floatwindow.R.id.size).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -149,54 +188,12 @@ public class WindowControl extends Fragment {
                 return false;
             }
         });
-        windowFrom.findViewById(com.jack8.floatwindow.R.id.menu).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(windowStruct == null) return;
-                showObj ^= WindowStruct.MENU_BUTTON;
-                windowStruct.setDisplayObject(showObj);
-            }
-        });
-        windowFrom.findViewById(com.jack8.floatwindow.R.id.hide).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(windowStruct == null) return;
-                showObj ^= WindowStruct.HIDE_BUTTON;
-                windowStruct.setDisplayObject(showObj);
-            }
-        });
-        windowFrom.findViewById(com.jack8.floatwindow.R.id.mini).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(windowStruct == null) return;
-                showObj ^= WindowStruct.MINI_BUTTON;
-                windowStruct.setDisplayObject(showObj);
-            }
-        });
-        windowFrom.findViewById(com.jack8.floatwindow.R.id.max).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(windowStruct == null) return;
-                showObj ^= WindowStruct.MAX_BUTTON;
-                windowStruct.setDisplayObject(showObj);
-            }
-        });
-        windowFrom.findViewById(com.jack8.floatwindow.R.id.fullscreen).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(windowStruct == null) return;
-                showObj ^= WindowStruct.FULLSCREEN_BUTTON;
-                windowStruct.setDisplayObject(showObj);
-            }
-        });
-        windowFrom.findViewById(com.jack8.floatwindow.R.id.close_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(windowStruct == null) return;
-                showObj ^= WindowStruct.CLOSE_BUTTON;
-                windowStruct.setDisplayObject(showObj);
-            }
-        });
+        windowFrom.findViewById(com.jack8.floatwindow.R.id.menu).setOnClickListener(changeWindowController);
+        windowFrom.findViewById(com.jack8.floatwindow.R.id.hide).setOnClickListener(changeWindowController);
+        windowFrom.findViewById(com.jack8.floatwindow.R.id.mini).setOnClickListener(changeWindowController);
+        windowFrom.findViewById(com.jack8.floatwindow.R.id.max).setOnClickListener(changeWindowController);
+        windowFrom.findViewById(com.jack8.floatwindow.R.id.fullscreen).setOnClickListener(changeWindowController);
+        windowFrom.findViewById(com.jack8.floatwindow.R.id.close_button).setOnClickListener(changeWindowController);
         TextView textView = new TextView(getContext());
         textView.setText(getString(R.string.window_control_win_content));
         ((ViewGroup)windowFrom.findViewById(com.jack8.floatwindow.R.id.wincon)).addView(textView);

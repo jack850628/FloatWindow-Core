@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.float_window_example:
-                navController.navigate(R.id.changeWindowColorPage);
+                navController.navigate(R.id.homePage);
                 drawerLayout.closeDrawers();
                 return true;
             case R.id.window_control:

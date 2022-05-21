@@ -56,7 +56,7 @@ public class HomePage extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("FloatWindow 範例");
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(getString(R.string.float_window_example));
         return inflater.inflate(R.layout.fragment_home_page, container, false);
     }
 
