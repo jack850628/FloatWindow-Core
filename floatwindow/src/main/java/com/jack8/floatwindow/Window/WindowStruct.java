@@ -1384,6 +1384,16 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
      * @param y Y座標
      */
     public void setGeneralPosition(int x,int y){
+        setGeneralPosition(x, y, false);
+    }
+
+    /**
+     * 設定general狀態的視窗位置
+     * @param x X座標
+     * @param y Y座標
+     * @param isUncertain 表示這個視窗位置不是最終的，所以當值為true時，不會觸發onWindowPositionChange事件
+     */
+    public void setGeneralPosition(int x,int y, boolean isUncertain){
         if(nowState != State.CLOSE) {
             y = Math.max(y,0);//防止與狀態列重疊
             left = x;
@@ -1393,7 +1403,9 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
                 wmlp.y = y;
                 wm.updateViewLayout(winform, wmlp);
             }
-            invokeWindowPositionChangeListener();
+            if(!isUncertain){
+                invokeWindowPositionChangeListener();
+            }
         }
     }
 
