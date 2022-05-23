@@ -156,10 +156,11 @@ public class WindowControl extends Fragment {
                         W = event.getRawY();//取得點擊的Y座標到視窗頂點的距離
                         return true;
                     }
-                    windowStruct.setPosition(windowStruct.getPositionX()-(int) (H-event.getRawX()),windowStruct.getPositionY()-(int) (W-event.getRawY()));
+                    windowStruct.setPosition(windowStruct.getPositionX()-(int) (H-event.getRawX()),windowStruct.getPositionY()-(int) (W-event.getRawY()), true);//當isUncertain為true時，不會觸發onWindowPositionChange事件
                     H = event.getRawX();
                     W = event.getRawY();
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    windowStruct.setPosition(windowStruct.getRealPositionX(), windowStruct.getRealPositionY());
                     H = -1;
                     W = -1;
                 }
@@ -177,11 +178,11 @@ public class WindowControl extends Fragment {
                         W = event.getRawY();//取得點擊的Y座標到視窗頂點的距離
                         return true;
                     }
-                    windowStruct.setWidth(windowStruct.getWidth()-(int) (H-event.getRawX()));
-                    windowStruct.setHeight(windowStruct.getHeight()-(int) (W-event.getRawY()));
+                    windowStruct.setSize(windowStruct.getHeight()-(int) (W-event.getRawY()), windowStruct.getWidth()-(int) (H-event.getRawX()), true);//當isUncertain為true時，不會觸發onWindowSizeChange事件
                     H = event.getRawX();
                     W = event.getRawY();
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    windowStruct.setSize(windowStruct.getWidth(), windowStruct.getHeight());
                     H = -1;
                     W = -1;
                 }

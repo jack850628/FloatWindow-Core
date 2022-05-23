@@ -1358,7 +1358,7 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
      * 設定視窗位置
      * @param x X座標
      * @param y Y座標
-     * @param isUncertain 表示這個視窗位置不是最終的
+     * @param isUncertain 表示這個視窗位置不是最終的，所以當值為true時，不會觸發onWindowPositionChange事件
      */
     public void setPosition(int x,int y, boolean isUncertain){
         if(nowState != State.CLOSE) {
@@ -1393,6 +1393,7 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
                 wmlp.y = y;
                 wm.updateViewLayout(winform, wmlp);
             }
+            invokeWindowPositionChangeListener();
         }
     }
 
@@ -1455,7 +1456,7 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
      * 設定視窗大小
      * @param width 寬度
      * @param height 高度
-     * @param isUncertain 表示這個視窗大小不是最終的
+     * @param isUncertain 表示這個視窗大小不是最終的，所以當值為true時，不會觸發onWindowSizeChange事件
      */
     public void setSize(int width, int height, boolean isUncertain){
         setWidth(width, true);
@@ -1476,7 +1477,7 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
     /**
      * 設定視窗寬度
      * @param width 寬度
-     * @param isUncertain 表示這個視窗寬度不是最終的
+     * @param isUncertain 表示這個視窗寬度不是最終的，所以當值為true時，不會觸發onWindowSizeChange事件
      */
     public void setWidth(int width, boolean isUncertain){
         this.width = Math.max(width, MINI_WINDOW_WIDTH);
@@ -1515,7 +1516,7 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
     /**
      * 設定視窗高度
      * @param height 高度
-     * @param isUncertain 表示這個視窗高度不是最終的
+     * @param isUncertain 表示這個視窗高度不是最終的，所以當值為true時，不會觸發onWindowSizeChange事件
      */
     public void setHeight(int height, boolean isUncertain){
         this.height = Math.max(height, winform.getHeight() - wincon.getHeight());
