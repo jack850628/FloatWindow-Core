@@ -178,7 +178,7 @@ public class WindowControl extends Fragment {
                         W = event.getRawY();//取得點擊的Y座標到視窗頂點的距離
                         return true;
                     }
-                    windowStruct.setSize(windowStruct.getHeight()-(int) (W-event.getRawY()), windowStruct.getWidth()-(int) (H-event.getRawX()), true);//當isUncertain為true時，不會觸發onWindowSizeChange事件
+                    windowStruct.setSize(windowStruct.getWidth()-(int) (H-event.getRawX()), windowStruct.getHeight()-(int) (W-event.getRawY()), true);//當isUncertain為true時，不會觸發onWindowSizeChange事件
                     H = event.getRawX();
                     W = event.getRawY();
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
