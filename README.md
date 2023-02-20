@@ -8,7 +8,8 @@ Core for floating Window app for Android\
 the core use in [FloatWindow](https://github.com/jack850628/FloatWindow)。
 
   *說明*\
-  ![Alt text](Demonstration2.png)
+  ![Alt text](Demonstration2.png) \
+  <img src="demonstration-en.jpg" width="804"></img>
 
 
 ## use FloatWindoew use in self App; 使用FloatWindoew在自己的APP裡
