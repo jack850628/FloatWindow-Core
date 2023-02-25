@@ -1,26 +1,25 @@
 <img src="icon.png" width="100"></img>
-# FloatWindowCore
-[中文說明](./README-zh.md)\
+# FloatWindowCore 浮動視窗核心
 Core for floating Window app for Android\
 ![Alt text](Demonstration.png)
 
 
-the core use in [FloatWindow](https://github.com/jack850628/FloatWindow)。
+這套核心應用在[FloatWindow 浮動視窗](https://github.com/jack850628/FloatWindow)中。
 
-  *Demonstration*\
-  <img src="demonstration-en.jpg" width="804"></img>
+  *說明*\
+  ![Alt text](Demonstration2.png)
 
 
-## use FloatWindoew use in self App
+## 使用FloatWindoew在自己的APP裡
 
-1. download [FloatWindow library](https://github.com/jack850628/FloatWindow-Core/releases/)
+1. 下載[FloatWindow模組](https://github.com/jack850628/FloatWindow-Core/releases/)
 
-2. import aar file to your project
-    - first create lib directory in app directory for your project \
+2. 引入aar檔到專案中 
+    - 先到專案的app資料夾中建立libs \
     <img src="說明1.png" width="300"></img>
-    - and copy floatwindow-release.aar to libs directory
+    - 然後將floatwindow-release.aar複製到libs內
 
-3. add implementation FloatWindow in build.gradle for your project
+3. 在專案的build.gradle中加入對FloatWindow的引用
     ```
     dependencies {
         ...
@@ -29,59 +28,59 @@ the core use in [FloatWindow](https://github.com/jack850628/FloatWindow)。
     }
     ```
 
-4. at last because FloatWindow has access to the ACTION_MANAGE_OVERLAY_PERMISSION permission, it is necessary to add corresponding processing to the user's request permission in your own APP
+4. 最後，FloatWindow有使用到ACTION_MANAGE_OVERLAY_PERMISSION權限，所以必須在自己的APP中加入跟使用者請求權限的對應處理。
 
-## how to use FloatWindow
+## FloatWindow的使用方法
 
-call WindowStruct.Builder can create a window \
-the easiest way to create a Window is
+使用WindowStruct.Builder可以創建一個視窗 \
+創建一個Window最簡當的方式為
 ```
 WindowStruct windowStruct = new WindowStruct.Builder(this,(WindowManager) getSystemService(Context.WINDOW_SERVICE)).show();
 ```
-this will create a Window with blank content \
-then
+這樣會創建出一個內容空白的Window \
+則
 ```
 WindowStruct windowStruct = new WindowStruct.Builder(this,(WindowManager) getSystemService(Context.WINDOW_SERVICE)).windowPages(new int[]{R.layout.my_layout}).windowPageTitles(new String[]{"My Title"}).show();
 ```
-this will create you a Window with content and title
+這將會為您創建出一個具有內容與標題的Window。
 
-If you want to use some parameters when creating a window, you can do this
+如果想在建立視窗時，帶點參數使用的話，可以這樣做
 ```
 Map<String, Object> args = new HashMap<String, Object>();
-args.put("aString", "abc");
-args.put("aInteger", 123);
+args.put("字串參數", "abc");
+args.put("數字參數", 123);
 
 windowStruct.Builder builder = new WindowStruct.Builder(this,(WindowManager) getSystemService(Context.WINDOW_SERVICE));
-builder.windowInitArgs(args);//add parameters
+builder.windowInitArgs(args);//放入參數
 builder.constructionAndDeconstructionWindow(new constructionAndDeconstructionWindow(){
     @Override
     public void onCreate(Context context, Map<String, Object> args, WindowStruct windowStruct){
-        //you can use parameters in this
+        //可以在這裡
     }
     @Override
     public void Construction(Context context, View pageView, int position, Map<String, Object> args, WindowStruct windowStruct){
-        //and in this
+        //和這裡接收到參數
     }
 });
 builder.show();
 ```
 
-Use WindowColor to set or get the window color
+使用WindowColor可以設定或取得視窗顏色
 ```
 WindowColor windowColor = new WindowColor(this);
-int windowBackgroundColor = windowColor.getWindowBackground();//get window background color
+int windowBackgroundColor = windowColor.getWindowBackground();//取得視窗背景顏色
 
 windowColor.setTitleBar(0x79afe47a);//ARGB
-windowColor.save();//save color change
+windowColor.save();//儲存顏色設定
 ```
 ## WindowStruct Lifecycle (constructionAndDeconstructionWindow)
 <img src="WindowStruct_Lifecycle.jpg" width="500"></img>
 
-## Events that can be listened to in WindowStruet
-> - OnWindowTitleChange    ->  when window title changed
-> - OnWindowStateChange    ->  when windiw state changed, ex: to max mini close
-> - OnWindowSizeChange     ->  when windiw size changed
-> - OnWindowPositionChange -> when windiw position changed
+## WindowStruet中可監聽的事件
+> - OnWindowTitleChange    當視窗標題改變
+> - OnWindowStateChange    當視窗狀態改變，例如：最大化、最小化、關閉
+> - OnWindowSizeChange     當視窗大小改變
+> - OnWindowPositionChange 當視窗位置改變
 ## Hello World
 #### MainActivity.java
 ```
@@ -124,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.hello).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //create a hello world FloatWindow
+                //建立一個hello world的FloatWindow視窗
                 new WindowStruct.Builder(MainActivity.this, (WindowManager) getSystemService(Context.WINDOW_SERVICE)).
                         windowPages(new int[]{R.layout.hello_page_1, R.layout.hello_page_2}).
                         windowPageTitles(new String[]{"Hello FloatWindow","Submit Hello"}).
@@ -257,4 +256,4 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 ## License
-[MIT license](https://github.com/jack850628/FloatWindow-Core/blob/main/LICENSE)
+使用[MIT license](https://github.com/jack850628/FloatWindow-Core/blob/main/LICENSE)
