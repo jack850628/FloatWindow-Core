@@ -28,5 +28,10 @@
     public *;
     protected *;
 }
+-keep public final class * {
+    public static *;
+    public *;
+    protected *;
+}
 
 -printmapping mapping.txt
