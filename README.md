@@ -31,7 +31,7 @@ the core use in [FloatWindow](https://github.com/jack850628/FloatWindow)。
 
 4. at last because FloatWindow has access to the ACTION_MANAGE_OVERLAY_PERMISSION permission, it is necessary to add corresponding processing to the user's request permission in your own APP
 
-## how to use FloatWindow
+## How to use FloatWindow
 
 call WindowStruct.Builder can create a window \
 the easiest way to create a Window is
@@ -75,7 +75,7 @@ windowColor.setTitleBar(0x79afe47a);//ARGB
 windowColor.save();//save color change
 ```
 ## com.jack8.floatwindow.Window.WindowManager
-This will be referred to as WindowManager. WindowManager contains all the windows that have not been closed yet. If you want to obtain all the unclosed windows, you can use the WindowManager.entrySet() method:
+Hereinafter referred to as WindowManager. WindowManager contains all the windows that have not been closed yet. If you want to obtain all the unclosed windows, you can use the WindowManager.entrySet() method:
 ```
 Set<Map.Entry<Integer, WindowStruct>> allWindows = WindowManager.entrySet();//<Number, Window>
 ```
