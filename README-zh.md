@@ -73,6 +73,57 @@ int windowBackgroundColor = windowColor.getWindowBackground();//取得視窗背�
 windowColor.setTitleBar(0x79afe47a);//ARGB
 windowColor.save();//儲存顏色設定
 ```
+## com.jack8.floatwindow.Window.WindowManager
+以下簡稱為WindowManager，WindowManager中擁有所有尚未被關閉的視窗，如果您想要取得所有未關閉的視窗，可以使用WindowManager.entrySet()
+```
+Set<Map.Entry<Integer, WindowStruct>> allWindows = WindowManager.entrySet();//<Number, Window>
+```
+每個視窗都有自己的編號，可以透過WindowStruct.getNumber取得
+```
+int windowNumber = new WindowStruct.Builder(this,(WindowManager) getSystemService(Context.WINDOW_SERVICE)).show().getNumber();
+```
+並且可以透過WindowManager.getWindowStruct()取得視窗
+```
+WindowStruct window = WindowManager.getWindowStruct(windowNumber);
+```
+因此建議您不需要自己維護WindowStruct的參照，您只需要維護每個視窗的Number並且在需要WindowStruct時從WindowManager中取得就可以了。
+
+## Sub Window
+如果有需要開新window並蓋住舊window來阻擋使用者操作舊window(例如: Alert Window)的話，您可以在建立WindowStruct時使用WindowStruct.Builder.parentWindow()
+```
+WindowStruct mainWindow = new WindowStruct.Builder(this,(WindowManager) getSystemService(Context.WINDOW_SERVICE)).show();
+
+WindowStruct alertWindow = new WindowStruct.Builder(this,(WindowManager) getSystemService(Context.WINDOW_SERVICE))
+    .parentWindow(mainWindow)
+    .show();
+```
+另外，一個window可以擁有多個sub window，您可以透過WindowStruct.getSubWindow()取得所有sub window
+```
+List<WindowStruct> subWindows = mainWindow.getSubWindow();
+```
+
+## Window Control Object
+您可以在Window建立時調整要顯示那些視窗控制物件(例如: 最大化按鈕、標題列、大小調整列)
+```
+WindowStruct alertWindow = new WindowStruct.Builder(this,(WindowManager) getSystemService(Context.WINDOW_SERVICE))
+    .displayObject(WindowStruct.TITLE_BAR_AND_BUTTONS | WindowStruct.CLOSE_BUTTON)
+    .show();
+```
+或建立後調整
+```
+alertWindow.setDisplayObject(alertWindow.getDisplayObject() | WindowStruct.MINI_BUTTON);
+```
+以下是所有可用的Control Object
+- ALL_NOT_DISPLAY
+- MENU_BUTTON
+- HIDE_BUTTON
+- MINI_BUTTON
+- MAX_BUTTON
+- CLOSE_BUTTON
+- SIZE_BAR
+- TITLE_BAR_AND_BUTTONS
+- FULLSCREEN_BUTTON
+
 ## WindowStruct Lifecycle (constructionAndDeconstructionWindow)
 <img src="WindowStruct_Lifecycle.jpg" width="500"></img>
 

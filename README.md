@@ -74,8 +74,59 @@ int windowBackgroundColor = windowColor.getWindowBackground();//get window backg
 windowColor.setTitleBar(0x79afe47a);//ARGB
 windowColor.save();//save color change
 ```
+## com.jack8.floatwindow.Window.WindowManager
+This will be referred to as WindowManager. WindowManager contains all the windows that have not been closed yet. If you want to obtain all the unclosed windows, you can use the WindowManager.entrySet() method:
+```
+Set<Map.Entry<Integer, WindowStruct>> allWindows = WindowManager.entrySet();//<Number, Window>
+```
+Each window has its own number, which can be obtained using WindowStruct.getNumber():
+```
+int windowNumber = new WindowStruct.Builder(this,(WindowManager) getSystemService(Context.WINDOW_SERVICE)).show().getNumber();
+```
+You can obtain a window using WindowManager.getWindowStruct():
+```
+WindowStruct window = WindowManager.getWindowStruct(windowNumber);
+```
+Therefore, it is recommended that you do not need to maintain a reference to WindowStruct. You only need to maintain the Number of each window and obtain the WindowStruct from WindowManager when needed.
+
+## Sub Window
+If you need to create a new window to cover the old window to block the user from operating the old window (such as an Alert Window), you can use WindowStruct.Builder.parentWindow() when creating WindowStruct:
+```
+WindowStruct mainWindow = new WindowStruct.Builder(this,(WindowManager) getSystemService(Context.WINDOW_SERVICE)).show();
+
+WindowStruct alertWindow = new WindowStruct.Builder(this,(WindowManager) getSystemService(Context.WINDOW_SERVICE))
+    .parentWindow(mainWindow)
+    .show();
+```
+In addition, a window can have multiple sub-windows, and you can obtain all sub-windows using WindowStruct.getSubWindow():
+```
+List<WindowStruct> subWindows = mainWindow.getSubWindow();
+```
+
+## Window Control Object
+You can adjust which window control objects to display when creating a window (such as Maximize Button, Title Bar, Size Adjustment Bar):
+```
+WindowStruct alertWindow = new WindowStruct.Builder(this,(WindowManager) getSystemService(Context.WINDOW_SERVICE))
+    .displayObject(WindowStruct.TITLE_BAR_AND_BUTTONS | WindowStruct.CLOSE_BUTTON)
+    .show();
+```
+Or adjust after creation:
+```
+alertWindow.setDisplayObject(alertWindow.getDisplayObject() | WindowStruct.MINI_BUTTON);
+```
+The following are all available Control Objects:
+- ALL_NOT_DISPLAY
+- MENU_BUTTON
+- HIDE_BUTTON
+- MINI_BUTTON
+- MAX_BUTTON
+- CLOSE_BUTTON
+- SIZE_BAR
+- TITLE_BAR_AND_BUTTONS
+- FULLSCREEN_BUTTON
+
 ## WindowStruct Lifecycle (constructionAndDeconstructionWindow)
-<img src="WindowStruct_Lifecycle.jpg" width="500"></img>
+<img src="WindowStruct_Lifecycle_en.jpg" width="500"></img>
 
 ## Events that can be listened to in WindowStruet
 > - OnWindowTitleChange    ->  when window title changed
