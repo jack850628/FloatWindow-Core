@@ -817,9 +817,18 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
                     windowAction.goClose(WindowStruct.this);
                     wm.removeView(winform);
                     ((WindowFrom)winform).setWindowStruct(null);
+                    ((WindowFrom)winform).setWindowKeyEvent(null);
+                    removeAllListener();
                     if(WindowManager.focusedWindowNumber == Number)
                         WindowManager.focusedWindowNumber = WindowManager.NON_FOCUSED_WINDOW;
                     WindowManager.removeWindowStruct(WindowStruct.this);
+
+                    wincon = null;
+                    winconPage = null;
+                    winform = null;
+                    windowAction = null;
+                    CDAW = null;
+                    screenSize = null;
                     Log.d("closed window id", String.valueOf(Number));
                 }
             }
@@ -1755,6 +1764,16 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
     }
 
     /**
+     * 移除所有監聽器
+     */
+    private void removeAllListener(){
+        this.onWindowStateChangeListenerList.clear();
+        this.onWindowSizeChangeListenerList.clear();
+        this.onWindowPositionChangeListenerList.clear();
+        this.onWindowTitleChangeListenerList.clear();
+    }
+
+    /**
      * 調用所有的視狀態式改變監聽器
      */
     private void invokeWindowStateChangeListener(){
@@ -1785,7 +1804,7 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
      * 調用所有的視窗標題改變監聽器
      * @param titleText 標題文字
      */
-    public void invokeWindowTitleChangeListener(String titleText){
+    private void invokeWindowTitleChangeListener(String titleText){
         for(OnWindowTitleChangeListener onWindowTitleChangeListener : this.onWindowTitleChangeListenerList){
             onWindowTitleChangeListener.onTitleChanged(context, this, titleText);
         }
