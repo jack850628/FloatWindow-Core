@@ -15,12 +15,7 @@ public class WindowFrom extends LinearLayout {
     public interface WindowKeyEvent{
         boolean dispatchKeyEvent(KeyEvent event);
     }
-    private WindowKeyEvent windowKeyEvent = new WindowKeyEvent() {
-        @Override
-        public boolean dispatchKeyEvent(KeyEvent event) {
-            return false;
-        }
-    };
+    private WindowKeyEvent windowKeyEvent = null;
     private WindowStruct WS;
     public boolean inited = false;//判斷視窗畫面是否初始化完成
     public WindowFrom(Context context) {
@@ -34,7 +29,7 @@ public class WindowFrom extends LinearLayout {
     void setWindowStruct(WindowStruct WS){
         this.WS = WS;
     }
-    public void setWindowKeyEvent(@NonNull WindowKeyEvent windowKeyEvent){
+    public void setWindowKeyEvent(WindowKeyEvent windowKeyEvent){
         this.windowKeyEvent = windowKeyEvent;
     }
     public WindowKeyEvent getWindowKeyEvent(){
@@ -63,7 +58,7 @@ public class WindowFrom extends LinearLayout {
     }
     @Override
     public boolean dispatchKeyEvent(KeyEvent event){
-        return windowKeyEvent.dispatchKeyEvent(event) || super.dispatchKeyEvent(event);
+        return (windowKeyEvent != null && windowKeyEvent.dispatchKeyEvent(event)) || super.dispatchKeyEvent(event);
     }
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
