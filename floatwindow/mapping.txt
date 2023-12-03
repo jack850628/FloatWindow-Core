@@ -2,22 +2,22 @@
 # compiler_version: 4.0.52
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.1"}
-# pg_map_id: b6cbc6a
-# pg_map_hash: SHA-256 b6cbc6a769bd4daeca49c8ae77644e7a63ce033a653bc80fa35a23132188e73e
+# pg_map_id: 938e63e
+# pg_map_hash: SHA-256 938e63e5a1c1cb45b42b22ad585f6dd84f3c57ad7d46d7bf61ae69678491625b
 com.jack8.floatwindow.Window.FullscreenWindowActivity -> com.jack8.floatwindow.Window.FullscreenWindowActivity:
     com.jack8.floatwindow.Window.WindowStruct$OnWindowTitleChangeListener onWindowTitleChangeListener -> a
     android.view.View winform -> c
     int windowNumber -> b
     1:1:void <init>():12:12 -> <init>
     1:3:void exitFullscreen():64:66 -> a
-    4:4:void com.jack8.floatwindow.Window.WindowStruct.setFullscreenActivity(com.jack8.floatwindow.Window.FullscreenWindowActivity):1932:1932 -> a
+    4:4:void com.jack8.floatwindow.Window.WindowStruct.setFullscreenActivity(com.jack8.floatwindow.Window.FullscreenWindowActivity):1946:1946 -> a
     4:4:void exitFullscreen():66 -> a
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
     5:5:void exitFullscreen():67:67 -> a
     1:28:void onCreate(android.os.Bundle):21:48 -> onCreate
-    29:29:void com.jack8.floatwindow.Window.WindowStruct.setFullscreenActivity(com.jack8.floatwindow.Window.FullscreenWindowActivity):1932:1932 -> onCreate
+    29:29:void com.jack8.floatwindow.Window.WindowStruct.setFullscreenActivity(com.jack8.floatwindow.Window.FullscreenWindowActivity):1946:1946 -> onCreate
     29:29:void onCreate(android.os.Bundle):50 -> onCreate
-    30:30:android.view.View com.jack8.floatwindow.Window.WindowStruct.getWinformForFullScreenActivity():1924:1924 -> onCreate
+    30:30:android.view.View com.jack8.floatwindow.Window.WindowStruct.getWinformForFullScreenActivity():1938:1938 -> onCreate
     30:30:void onCreate(android.os.Bundle):51 -> onCreate
     31:40:void onCreate(android.os.Bundle):51:60 -> onCreate
     1:7:void onDestroy():72:78 -> onDestroy
@@ -140,143 +140,143 @@ com.jack8.floatwindow.Window.WindowStruct -> com.jack8.floatwindow.Window.Window
     856:856:void <init>(android.content.Context,android.view.WindowManager,android.view.View[],java.lang.String[],java.util.Map,int,int,int,int,int,int,int,int,int,int,int,com.jack8.floatwindow.Window.WindowStruct$ScreenSize,com.jack8.floatwindow.Window.WindowStruct$WindowAction,com.jack8.floatwindow.Window.WindowStruct$constructionAndDeconstructionWindow,int,com.jack8.floatwindow.Window.WindowStruct$State):531:531 -> <init>
     857:876:void <init>(android.content.Context,android.view.WindowManager,android.view.View[],java.lang.String[],java.util.Map,int,int,int,int,int,int,int,int,int,int,int,com.jack8.floatwindow.Window.WindowStruct$ScreenSize,com.jack8.floatwindow.Window.WindowStruct$WindowAction,com.jack8.floatwindow.Window.WindowStruct$constructionAndDeconstructionWindow,int,com.jack8.floatwindow.Window.WindowStruct$State):528:547 -> <init>
     1:1:android.content.Context access$000(com.jack8.floatwindow.Window.WindowStruct):38:38 -> a
-    2:35:void setDisplayObject():1193:1226 -> a
-    36:42:void setDisplayObject():1224:1230 -> a
-    43:56:void setWindowButtonsSize(int,int):1242:1255 -> a
-    57:63:void focusWindow(boolean):1273:1279 -> a
+    2:35:void setDisplayObject():1207:1240 -> a
+    36:42:void setDisplayObject():1238:1244 -> a
+    43:56:void setWindowButtonsSize(int,int):1256:1269 -> a
+    57:63:void focusWindow(boolean):1287:1293 -> a
     64:64:void com.jack8.floatwindow.Window.WindowFrom.setWindowStyleOfFocus():74:74 -> a
-    64:64:void focusWindow(boolean):1279 -> a
+    64:64:void focusWindow(boolean):1293 -> a
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
     66:69:void com.jack8.floatwindow.Window.WindowFrom.setWindowStyleOfFocus():76:79 -> a
-    66:69:void focusWindow(boolean):1279 -> a
-    70:80:void focusWindow(boolean):1280:1290 -> a
-    1:1:void addWindowPositionChangeListener(com.jack8.floatwindow.Window.WindowStruct$OnWindowPositionChangeListener):1723:1723 -> addWindowPositionChangeListener
-    1:1:void addWindowSizeChangeListener(com.jack8.floatwindow.Window.WindowStruct$OnWindowSizeChangeListener):1715:1715 -> addWindowSizeChangeListener
-    1:1:void addWindowStateChangeListener(com.jack8.floatwindow.Window.WindowStruct$OnWindowStateChangeListener):1707:1707 -> addWindowStateChangeListener
-    1:1:void addWindowTitleChangeListener(com.jack8.floatwindow.Window.WindowStruct$OnWindowTitleChangeListener):1731:1731 -> addWindowTitleChangeListener
+    66:69:void focusWindow(boolean):1293 -> a
+    70:80:void focusWindow(boolean):1294:1304 -> a
+    1:1:void addWindowPositionChangeListener(com.jack8.floatwindow.Window.WindowStruct$OnWindowPositionChangeListener):1737:1737 -> addWindowPositionChangeListener
+    1:1:void addWindowSizeChangeListener(com.jack8.floatwindow.Window.WindowStruct$OnWindowSizeChangeListener):1729:1729 -> addWindowSizeChangeListener
+    1:1:void addWindowStateChangeListener(com.jack8.floatwindow.Window.WindowStruct$OnWindowStateChangeListener):1721:1721 -> addWindowStateChangeListener
+    1:1:void addWindowTitleChangeListener(com.jack8.floatwindow.Window.WindowStruct$OnWindowTitleChangeListener):1745:1745 -> addWindowTitleChangeListener
     1:1:android.view.View access$100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> b
-    2:3:void setWindowDisplayObjectSize():1237:1238 -> b
-    4:4:void setWindowSizeBarHeightSize(int):1258:1258 -> b
-    4:4:void setWindowDisplayObjectSize():1238 -> b
+    2:3:void setWindowDisplayObjectSize():1251:1252 -> b
+    4:4:void setWindowSizeBarHeightSize(int):1272:1272 -> b
+    4:4:void setWindowDisplayObjectSize():1252 -> b
     1:1:void access$1400(com.jack8.floatwindow.Window.WindowStruct):38:38 -> c
-    2:13:void toFullscreenActivity():839:850 -> c
+    2:13:void toFullscreenActivity():849:860 -> c
     2:13:void access$1400(com.jack8.floatwindow.Window.WindowStruct):38 -> c
-    1:17:void close():1090:1106 -> close
-    18:27:void close():1105:1114 -> close
-    28:46:void close():1113:1131 -> close
-    47:50:void close():1130:1133 -> close
-    1:1:void closeMenu():1891:1891 -> closeMenu
+    1:17:void close():1104:1120 -> close
+    18:27:void close():1119:1128 -> close
+    28:46:void close():1127:1145 -> close
+    47:50:void close():1144:1147 -> close
+    1:1:void closeMenu():1905:1905 -> closeMenu
     2:2:void com.jack8.floatwindow.Window.WindowStruct$MenuList.closeMenu():672:672 -> closeMenu
-    2:2:void closeMenu():1891 -> closeMenu
+    2:2:void closeMenu():1905 -> closeMenu
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
     3:4:void com.jack8.floatwindow.Window.WindowStruct$MenuList.closeMenu():673:674 -> closeMenu
-    3:4:void closeMenu():1891 -> closeMenu
-    1:19:void focusAndShowWindow():1298:1316 -> focusAndShowWindow
-    20:39:void focusAndShowWindow():1300:1319 -> focusAndShowWindow
-    1:1:void focusWindow():1265:1265 -> focusWindow
-    1:19:void fullscreen():1047:1065 -> fullscreen
-    20:26:void fullscreen():1064:1070 -> fullscreen
-    27:41:void fullscreen():1068:1082 -> fullscreen
-    1:21:void general():955:975 -> general
-    22:29:void general():973:980 -> general
-    30:45:void general():978:993 -> general
-    46:54:void general():991:999 -> general
-    1:1:int getButtonHeightForMiniState():1639:1639 -> getButtonHeightForMiniState
-    1:1:int getButtonWidthForMiniState():1658:1658 -> getButtonWidthForMiniState
-    1:1:com.jack8.floatwindow.Window.WindowStruct$constructionAndDeconstructionWindow getConstructionAndDeconstructionWindow():1877:1877 -> getConstructionAndDeconstructionWindow
-    1:1:int getCurrentPagePosition():1677:1677 -> getCurrentPagePosition
-    1:1:com.jack8.floatwindow.Window.WindowStruct$State getCurrentState():1907:1907 -> getCurrentState
-    1:1:int getDisplayObject():1354:1354 -> getDisplayObject
-    1:1:int getGeneralPositionX():1456:1456 -> getGeneralPositionX
-    1:1:int getGeneralPositionY():1464:1464 -> getGeneralPositionY
-    1:1:int getHeight():1558:1558 -> getHeight
-    1:1:int getNumber():1859:1859 -> getNumber
-    1:1:int getPositionX():1426:1426 -> getPositionX
-    1:1:int getPositionY():1434:1434 -> getPositionY
-    1:1:com.jack8.floatwindow.Window.WindowStruct$State getPreviousState():1915:1915 -> getPreviousState
-    1:1:int getRealHeight():1565:1565 -> getRealHeight
-    1:1:int getRealPositionX():1441:1441 -> getRealPositionX
-    1:1:int getRealPositionY():1449:1449 -> getRealPositionY
-    1:1:int getRealWidth():1526:1526 -> getRealWidth
-    1:3:java.util.ArrayList getSubWindow():1666:1668 -> getSubWindow
-    1:1:int getTransitionsDuration():1843:1843 -> getTransitionsDuration
-    1:1:int getWidth():1519:1519 -> getWidth
-    1:1:int getWindowButtonsHeight():1584:1584 -> getWindowButtonsHeight
-    1:1:int getWindowButtonsWidth():1603:1603 -> getWindowButtonsWidth
-    1:1:com.jack8.floatwindow.Window.WindowFrom getWindowFrom():1851:1851 -> getWindowFrom
-    1:1:int getWindowSizeBarHeight():1620:1620 -> getWindowSizeBarHeight
-    1:1:com.jack8.floatwindow.Window.WindowStruct getWindowStruct(int):1869:1869 -> getWindowStruct
-    1:1:java.lang.String getWindowTitle(int):1819:1819 -> getWindowTitle
-    2:2:java.lang.String getWindowTitle():1827:1827 -> getWindowTitle
-    1:12:void hide():1007:1018 -> hide
-    13:22:void hide():1017:1026 -> hide
-    23:32:void hide():1025:1034 -> hide
-    33:39:void hide():1033:1039 -> hide
-    1:19:void max():908:926 -> max
-    20:26:void max():925:931 -> max
-    27:45:void max():929:947 -> max
-    1:14:void mini():864:877 -> mini
-    15:23:void mini():875:883 -> mini
-    24:36:void mini():882:894 -> mini
-    37:43:void mini():892:898 -> mini
-    44:62:void hideButtons():1141:1159 -> mini
-    44:62:void mini():899 -> mini
-    63:63:void mini():900:900 -> mini
+    3:4:void closeMenu():1905 -> closeMenu
+    1:19:void focusAndShowWindow():1312:1330 -> focusAndShowWindow
+    20:39:void focusAndShowWindow():1314:1333 -> focusAndShowWindow
+    1:1:void focusWindow():1279:1279 -> focusWindow
+    1:19:void fullscreen():1061:1079 -> fullscreen
+    20:26:void fullscreen():1078:1084 -> fullscreen
+    27:41:void fullscreen():1082:1096 -> fullscreen
+    1:21:void general():967:987 -> general
+    22:29:void general():985:992 -> general
+    30:45:void general():990:1005 -> general
+    46:54:void general():1003:1011 -> general
+    1:1:int getButtonHeightForMiniState():1653:1653 -> getButtonHeightForMiniState
+    1:1:int getButtonWidthForMiniState():1672:1672 -> getButtonWidthForMiniState
+    1:1:com.jack8.floatwindow.Window.WindowStruct$constructionAndDeconstructionWindow getConstructionAndDeconstructionWindow():1891:1891 -> getConstructionAndDeconstructionWindow
+    1:1:int getCurrentPagePosition():1691:1691 -> getCurrentPagePosition
+    1:1:com.jack8.floatwindow.Window.WindowStruct$State getCurrentState():1921:1921 -> getCurrentState
+    1:1:int getDisplayObject():1368:1368 -> getDisplayObject
+    1:1:int getGeneralPositionX():1470:1470 -> getGeneralPositionX
+    1:1:int getGeneralPositionY():1478:1478 -> getGeneralPositionY
+    1:1:int getHeight():1572:1572 -> getHeight
+    1:1:int getNumber():1873:1873 -> getNumber
+    1:1:int getPositionX():1440:1440 -> getPositionX
+    1:1:int getPositionY():1448:1448 -> getPositionY
+    1:1:com.jack8.floatwindow.Window.WindowStruct$State getPreviousState():1929:1929 -> getPreviousState
+    1:1:int getRealHeight():1579:1579 -> getRealHeight
+    1:1:int getRealPositionX():1455:1455 -> getRealPositionX
+    1:1:int getRealPositionY():1463:1463 -> getRealPositionY
+    1:1:int getRealWidth():1540:1540 -> getRealWidth
+    1:3:java.util.ArrayList getSubWindow():1680:1682 -> getSubWindow
+    1:1:int getTransitionsDuration():1857:1857 -> getTransitionsDuration
+    1:1:int getWidth():1533:1533 -> getWidth
+    1:1:int getWindowButtonsHeight():1598:1598 -> getWindowButtonsHeight
+    1:1:int getWindowButtonsWidth():1617:1617 -> getWindowButtonsWidth
+    1:1:com.jack8.floatwindow.Window.WindowFrom getWindowFrom():1865:1865 -> getWindowFrom
+    1:1:int getWindowSizeBarHeight():1634:1634 -> getWindowSizeBarHeight
+    1:1:com.jack8.floatwindow.Window.WindowStruct getWindowStruct(int):1883:1883 -> getWindowStruct
+    1:1:java.lang.String getWindowTitle(int):1833:1833 -> getWindowTitle
+    2:2:java.lang.String getWindowTitle():1841:1841 -> getWindowTitle
+    1:14:void hide():1019:1032 -> hide
+    15:24:void hide():1031:1040 -> hide
+    25:34:void hide():1039:1048 -> hide
+    35:41:void hide():1047:1053 -> hide
+    1:19:void max():920:938 -> max
+    20:26:void max():937:943 -> max
+    27:45:void max():941:959 -> max
+    1:16:void mini():874:889 -> mini
+    17:25:void mini():887:895 -> mini
+    26:38:void mini():894:906 -> mini
+    39:45:void mini():904:910 -> mini
+    46:64:void hideButtons():1155:1173 -> mini
+    46:64:void mini():911 -> mini
+    65:65:void mini():912:912 -> mini
     1:11:void onClick(android.view.View):738:748 -> onClick
     12:34:void onClick(android.view.View):745:767 -> onClick
     1:10:boolean onTouch(android.view.View,android.view.MotionEvent):717:726 -> onTouch
     11:21:boolean onTouch(android.view.View,android.view.MotionEvent):720:730 -> onTouch
-    1:1:void removeWindowPositionChangeListener(com.jack8.floatwindow.Window.WindowStruct$OnWindowPositionChangeListener):1755:1755 -> removeWindowPositionChangeListener
-    1:1:void removeWindowSizeChangeListener(com.jack8.floatwindow.Window.WindowStruct$OnWindowSizeChangeListener):1747:1747 -> removeWindowSizeChangeListener
-    1:1:void removeWindowStateChangeListener(com.jack8.floatwindow.Window.WindowStruct$OnWindowStateChangeListener):1739:1739 -> removeWindowStateChangeListener
-    1:1:void removeWindowTitleChangeListener(com.jack8.floatwindow.Window.WindowStruct$OnWindowTitleChangeListener):1763:1763 -> removeWindowTitleChangeListener
-    1:4:void setButtonHeightForMiniState(int):1627:1630 -> setButtonHeightForMiniState
-    1:4:void setButtonWidthForMiniState(int):1646:1649 -> setButtonWidthForMiniState
-    1:2:void setDisplayObject(int):1345:1346 -> setDisplayObject
-    1:1:void setGeneralPosition(int,int):1396:1396 -> setGeneralPosition
-    2:9:void setGeneralPosition(int,int,boolean):1406:1413 -> setGeneralPosition
-    10:11:void invokeWindowPositionChangeListener():1798:1799 -> setGeneralPosition
-    10:11:void setGeneralPosition(int,int,boolean):1416 -> setGeneralPosition
-    1:1:void setHeight(int):1534:1534 -> setHeight
-    2:7:void setHeight(int,boolean):1543:1548 -> setHeight
-    8:9:void invokeWindowSizeChangeListener():1789:1790 -> setHeight
-    8:9:void setHeight(int,boolean):1549 -> setHeight
-    1:1:void setPosition(int,int):1363:1363 -> setPosition
-    2:11:void setPosition(int,int,boolean):1373:1382 -> setPosition
-    12:13:void invokeWindowPositionChangeListener():1798:1799 -> setPosition
-    12:13:void setPosition(int,int,boolean):1385 -> setPosition
-    1:1:void setSize(int,int):1473:1473 -> setSize
-    2:4:void setSize(int,int,boolean):1483:1485 -> setSize
-    5:6:void invokeWindowSizeChangeListener():1789:1790 -> setSize
-    5:6:void setSize(int,int,boolean):1486 -> setSize
-    1:1:void setTransitionsDuration(int):1835:1835 -> setTransitionsDuration
-    1:1:void setWidth(int):1495:1495 -> setWidth
-    2:7:void setWidth(int,boolean):1504:1509 -> setWidth
-    8:9:void invokeWindowSizeChangeListener():1789:1790 -> setWidth
-    8:9:void setWidth(int,boolean):1510 -> setWidth
-    1:3:void setWindowButtonsHeight(int):1573:1575 -> setWindowButtonsHeight
-    1:3:void setWindowButtonsWidth(int):1592:1594 -> setWindowButtonsWidth
-    1:1:void setWindowSizeBarHeight(int):1611:1611 -> setWindowSizeBarHeight
-    2:2:void setWindowSizeBarHeightSize(int):1258:1258 -> setWindowSizeBarHeight
-    2:2:void setWindowSizeBarHeight(int):1612 -> setWindowSizeBarHeight
-    1:4:void setWindowTitle(int,java.lang.String):1686:1689 -> setWindowTitle
-    5:6:void setWindowTitle(java.lang.String):1697:1698 -> setWindowTitle
-    7:8:void invokeWindowTitleChangeListener(java.lang.String):1808:1809 -> setWindowTitle
-    7:8:void setWindowTitle(java.lang.String):1699 -> setWindowTitle
-    1:1:void showMenu():1884:1884 -> showMenu
+    1:1:void removeWindowPositionChangeListener(com.jack8.floatwindow.Window.WindowStruct$OnWindowPositionChangeListener):1769:1769 -> removeWindowPositionChangeListener
+    1:1:void removeWindowSizeChangeListener(com.jack8.floatwindow.Window.WindowStruct$OnWindowSizeChangeListener):1761:1761 -> removeWindowSizeChangeListener
+    1:1:void removeWindowStateChangeListener(com.jack8.floatwindow.Window.WindowStruct$OnWindowStateChangeListener):1753:1753 -> removeWindowStateChangeListener
+    1:1:void removeWindowTitleChangeListener(com.jack8.floatwindow.Window.WindowStruct$OnWindowTitleChangeListener):1777:1777 -> removeWindowTitleChangeListener
+    1:4:void setButtonHeightForMiniState(int):1641:1644 -> setButtonHeightForMiniState
+    1:4:void setButtonWidthForMiniState(int):1660:1663 -> setButtonWidthForMiniState
+    1:2:void setDisplayObject(int):1359:1360 -> setDisplayObject
+    1:1:void setGeneralPosition(int,int):1410:1410 -> setGeneralPosition
+    2:9:void setGeneralPosition(int,int,boolean):1420:1427 -> setGeneralPosition
+    10:11:void invokeWindowPositionChangeListener():1812:1813 -> setGeneralPosition
+    10:11:void setGeneralPosition(int,int,boolean):1430 -> setGeneralPosition
+    1:1:void setHeight(int):1548:1548 -> setHeight
+    2:7:void setHeight(int,boolean):1557:1562 -> setHeight
+    8:9:void invokeWindowSizeChangeListener():1803:1804 -> setHeight
+    8:9:void setHeight(int,boolean):1563 -> setHeight
+    1:1:void setPosition(int,int):1377:1377 -> setPosition
+    2:11:void setPosition(int,int,boolean):1387:1396 -> setPosition
+    12:13:void invokeWindowPositionChangeListener():1812:1813 -> setPosition
+    12:13:void setPosition(int,int,boolean):1399 -> setPosition
+    1:1:void setSize(int,int):1487:1487 -> setSize
+    2:4:void setSize(int,int,boolean):1497:1499 -> setSize
+    5:6:void invokeWindowSizeChangeListener():1803:1804 -> setSize
+    5:6:void setSize(int,int,boolean):1500 -> setSize
+    1:1:void setTransitionsDuration(int):1849:1849 -> setTransitionsDuration
+    1:1:void setWidth(int):1509:1509 -> setWidth
+    2:7:void setWidth(int,boolean):1518:1523 -> setWidth
+    8:9:void invokeWindowSizeChangeListener():1803:1804 -> setWidth
+    8:9:void setWidth(int,boolean):1524 -> setWidth
+    1:3:void setWindowButtonsHeight(int):1587:1589 -> setWindowButtonsHeight
+    1:3:void setWindowButtonsWidth(int):1606:1608 -> setWindowButtonsWidth
+    1:1:void setWindowSizeBarHeight(int):1625:1625 -> setWindowSizeBarHeight
+    2:2:void setWindowSizeBarHeightSize(int):1272:1272 -> setWindowSizeBarHeight
+    2:2:void setWindowSizeBarHeight(int):1626 -> setWindowSizeBarHeight
+    1:4:void setWindowTitle(int,java.lang.String):1700:1703 -> setWindowTitle
+    5:6:void setWindowTitle(java.lang.String):1711:1712 -> setWindowTitle
+    7:8:void invokeWindowTitleChangeListener(java.lang.String):1822:1823 -> setWindowTitle
+    7:8:void setWindowTitle(java.lang.String):1713 -> setWindowTitle
+    1:1:void showMenu():1898:1898 -> showMenu
     2:2:void com.jack8.floatwindow.Window.WindowStruct$MenuList.showMenu():667:667 -> showMenu
-    2:2:void showMenu():1884 -> showMenu
+    2:2:void showMenu():1898 -> showMenu
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
     3:4:void com.jack8.floatwindow.Window.WindowStruct$MenuList.showMenu():668:669 -> showMenu
-    3:4:void showMenu():1884 -> showMenu
-    1:1:void showPage(int):1899:1899 -> showPage
-    1:6:void unFocusWindow():1326:1331 -> unFocusWindow
+    3:4:void showMenu():1898 -> showMenu
+    1:1:void showPage(int):1913:1913 -> showPage
+    1:6:void unFocusWindow():1340:1345 -> unFocusWindow
     7:7:void com.jack8.floatwindow.Window.WindowFrom.setWindowStyleOfUnFocus():82:82 -> unFocusWindow
-    7:7:void unFocusWindow():1331 -> unFocusWindow
+    7:7:void unFocusWindow():1345 -> unFocusWindow
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
     9:12:void com.jack8.floatwindow.Window.WindowFrom.setWindowStyleOfUnFocus():84:87 -> unFocusWindow
-    9:12:void unFocusWindow():1331 -> unFocusWindow
-    13:17:void unFocusWindow():1332:1336 -> unFocusWindow
+    9:12:void unFocusWindow():1345 -> unFocusWindow
+    13:17:void unFocusWindow():1346:1350 -> unFocusWindow
 com.jack8.floatwindow.Window.WindowStruct$1 -> com.jack8.floatwindow.Window.WindowStruct$a:
     com.jack8.floatwindow.Window.WindowStruct this$0 -> a
     1:1:void <init>(com.jack8.floatwindow.Window.WindowStruct):399:399 -> <init>
@@ -290,14 +290,14 @@ com.jack8.floatwindow.Window.WindowStruct$2 -> com.jack8.floatwindow.Window.Wind
     10:20:boolean onTouch(android.view.View,android.view.MotionEvent):463:473 -> onTouch
 com.jack8.floatwindow.Window.WindowStruct$3 -> com.jack8.floatwindow.Window.a:
     com.jack8.floatwindow.Window.WindowStruct this$0 -> a
-    1:1:void <init>(com.jack8.floatwindow.Window.WindowStruct):850:850 -> <init>
-    1:1:void run():853:853 -> run
+    1:1:void <init>(com.jack8.floatwindow.Window.WindowStruct):860:860 -> <init>
+    1:1:void run():863:863 -> run
     2:2:com.jack8.floatwindow.Window.WindowStruct$State com.jack8.floatwindow.Window.WindowStruct.access$700(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    2:2:void run():853 -> run
-    3:3:void run():853:853 -> run
+    2:2:void run():863 -> run
+    3:3:void run():863:863 -> run
     4:4:com.jack8.floatwindow.Window.FullscreenWindowActivity com.jack8.floatwindow.Window.WindowStruct.access$1800(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    4:4:void run():853 -> run
-    5:5:void run():854:854 -> run
+    4:4:void run():863 -> run
+    5:5:void run():864:864 -> run
 com.jack8.floatwindow.Window.WindowStruct$4 -> com.jack8.floatwindow.Window.WindowStruct$c:
     int[] $SwitchMap$com$jack8$floatwindow$Window$WindowStruct$State -> a
     1:1:void <clinit>():526:526 -> <clinit>
@@ -421,171 +421,188 @@ com.jack8.floatwindow.Window.WindowStruct$MenuList$1 -> com.jack8.floatwindow.Wi
     3:5:android.view.View getView(int,android.view.View,android.view.ViewGroup):657:659 -> getView
 com.jack8.floatwindow.Window.WindowStruct$RunTransitions -> com.jack8.floatwindow.Window.WindowStruct$e:
     com.jack8.floatwindow.Window.WindowStruct$State state -> a
-    com.jack8.floatwindow.Window.WindowStruct this$0 -> b
-    1:2:void <init>(com.jack8.floatwindow.Window.WindowStruct,com.jack8.floatwindow.Window.WindowStruct$State):774:775 -> <init>
-    1:1:void run():780:780 -> run
+    com.jack8.floatwindow.Window.WindowStruct$State previousState -> b
+    com.jack8.floatwindow.Window.WindowStruct this$0 -> c
+    1:3:void <init>(com.jack8.floatwindow.Window.WindowStruct,com.jack8.floatwindow.Window.WindowStruct$State,com.jack8.floatwindow.Window.WindowStruct$State):774:776 -> <init>
+    1:1:void run():781:781 -> run
     2:2:com.jack8.floatwindow.Window.WindowStruct$State com.jack8.floatwindow.Window.WindowStruct.access$700(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    2:2:void run():780 -> run
-    3:3:int com.jack8.floatwindow.Window.WindowStruct.access$800(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    3:3:void run():783 -> run
-    4:4:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$900(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    4:4:void run():785 -> run
-    5:6:void run():785:786 -> run
-    7:7:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$1000(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    7:7:void run():786 -> run
-    8:9:void run():786:787 -> run
-    10:10:android.view.WindowManager$LayoutParams com.jack8.floatwindow.Window.WindowStruct.access$1100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    10:10:void run():787 -> run
-    11:11:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$900(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    11:11:void run():787 -> run
-    12:13:void run():787:788 -> run
-    14:14:android.view.WindowManager$LayoutParams com.jack8.floatwindow.Window.WindowStruct.access$1100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    14:14:void run():788 -> run
-    15:15:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$900(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    15:15:void run():788 -> run
-    16:17:void run():788:789 -> run
-    18:18:android.view.View com.jack8.floatwindow.Window.WindowStruct.access$100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    18:18:void run():789 -> run
-    19:19:void run():789:789 -> run
-    20:20:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$1000(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    20:20:void run():789 -> run
-    21:22:void run():789:790 -> run
-    23:23:android.view.View com.jack8.floatwindow.Window.WindowStruct.access$100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    23:23:void run():790 -> run
-    24:24:void run():790:790 -> run
-    25:25:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$1000(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    25:25:void run():790 -> run
-    26:27:void run():790:791 -> run
-    28:28:android.view.WindowManager com.jack8.floatwindow.Window.WindowStruct.access$1200(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    28:28:void run():791 -> run
+    2:2:void run():781 -> run
+    3:3:void run():782:782 -> run
+    4:4:android.view.ViewGroup com.jack8.floatwindow.Window.WindowStruct.access$500(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    4:4:void run():783 -> run
+    5:6:void run():783:784 -> run
+    7:7:android.view.ViewGroup com.jack8.floatwindow.Window.WindowStruct.access$500(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    7:7:void run():784 -> run
+    8:8:void run():784:784 -> run
+    9:9:int com.jack8.floatwindow.Window.WindowStruct.access$800(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    9:9:void run():788 -> run
+    10:10:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$900(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    10:10:void run():790 -> run
+    11:12:void run():790:791 -> run
+    13:13:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$1000(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    13:13:void run():791 -> run
+    14:15:void run():791:792 -> run
+    16:16:android.view.WindowManager$LayoutParams com.jack8.floatwindow.Window.WindowStruct.access$1100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    16:16:void run():792 -> run
+    17:17:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$900(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    17:17:void run():792 -> run
+    18:19:void run():792:793 -> run
+    20:20:android.view.WindowManager$LayoutParams com.jack8.floatwindow.Window.WindowStruct.access$1100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    20:20:void run():793 -> run
+    21:21:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$900(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    21:21:void run():793 -> run
+    22:23:void run():793:794 -> run
+    24:24:android.view.View com.jack8.floatwindow.Window.WindowStruct.access$100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    24:24:void run():794 -> run
+    25:25:void run():794:794 -> run
+    26:26:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$1000(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    26:26:void run():794 -> run
+    27:28:void run():794:795 -> run
     29:29:android.view.View com.jack8.floatwindow.Window.WindowStruct.access$100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    29:29:void run():791 -> run
-    30:30:android.view.WindowManager$LayoutParams com.jack8.floatwindow.Window.WindowStruct.access$1100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    30:30:void run():791 -> run
-    31:33:void run():791:793 -> run
-    34:34:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$900(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    34:34:void run():793 -> run
-    35:35:void run():793:793 -> run
-    36:36:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$1000(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    36:36:void run():793 -> run
-    37:49:void run():793:805 -> run
-    50:50:void com.jack8.floatwindow.Window.WindowStruct.invokeWindowStateChangeListener():1780:1780 -> run
-    50:50:void com.jack8.floatwindow.Window.WindowStruct.access$1300(com.jack8.floatwindow.Window.WindowStruct):38 -> run
+    29:29:void run():795 -> run
+    30:30:void run():795:795 -> run
+    31:31:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$1000(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    31:31:void run():795 -> run
+    32:33:void run():795:796 -> run
+    34:34:android.view.WindowManager com.jack8.floatwindow.Window.WindowStruct.access$1200(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    34:34:void run():796 -> run
+    35:35:android.view.View com.jack8.floatwindow.Window.WindowStruct.access$100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    35:35:void run():796 -> run
+    36:36:android.view.WindowManager$LayoutParams com.jack8.floatwindow.Window.WindowStruct.access$1100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    36:36:void run():796 -> run
+    37:39:void run():796:798 -> run
+    40:40:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$900(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    40:40:void run():798 -> run
+    41:41:void run():798:798 -> run
+    42:42:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$1000(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    42:42:void run():798 -> run
+    43:55:void run():798:810 -> run
+    56:56:void com.jack8.floatwindow.Window.WindowStruct.invokeWindowStateChangeListener():1794:1794 -> run
+    56:56:void com.jack8.floatwindow.Window.WindowStruct.access$1300(com.jack8.floatwindow.Window.WindowStruct):38 -> run
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    50:50:void run():805 -> run
-    51:52:void com.jack8.floatwindow.Window.WindowStruct.invokeWindowStateChangeListener():1780:1781 -> run
-    51:52:void com.jack8.floatwindow.Window.WindowStruct.access$1300(com.jack8.floatwindow.Window.WindowStruct):38 -> run
-    51:52:void run():805 -> run
-    53:54:void run():806:807 -> run
-    55:55:android.view.WindowManager$LayoutParams com.jack8.floatwindow.Window.WindowStruct.access$1100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    55:55:void run():807 -> run
-    56:56:void run():807:807 -> run
-    57:57:android.view.WindowManager com.jack8.floatwindow.Window.WindowStruct.access$1200(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    57:57:void run():808 -> run
-    58:58:android.view.View com.jack8.floatwindow.Window.WindowStruct.access$100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    58:58:void run():808 -> run
-    59:61:void run():808:810 -> run
-    62:62:android.view.WindowManager com.jack8.floatwindow.Window.WindowStruct.access$1200(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    62:62:void run():810 -> run
-    63:63:android.view.View com.jack8.floatwindow.Window.WindowStruct.access$100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    63:63:void run():810 -> run
-    64:67:void run():810:813 -> run
-    68:68:com.jack8.floatwindow.Window.WindowStruct$constructionAndDeconstructionWindow com.jack8.floatwindow.Window.WindowStruct.access$400(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    68:68:void run():813 -> run
-    69:69:android.content.Context com.jack8.floatwindow.Window.WindowStruct.access$000(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    69:69:void run():813 -> run
-    70:70:android.view.View[] com.jack8.floatwindow.Window.WindowStruct.access$200(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    70:70:void run():813 -> run
-    71:71:int com.jack8.floatwindow.Window.WindowStruct.access$300(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    71:71:void run():813 -> run
-    72:73:void run():813:814 -> run
-    74:74:android.view.View[] com.jack8.floatwindow.Window.WindowStruct.access$200(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    74:74:void run():814 -> run
-    75:75:void run():814:814 -> run
-    76:76:com.jack8.floatwindow.Window.WindowStruct$constructionAndDeconstructionWindow com.jack8.floatwindow.Window.WindowStruct.access$400(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    76:76:void run():815 -> run
-    77:77:android.content.Context com.jack8.floatwindow.Window.WindowStruct.access$000(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    77:77:void run():815 -> run
-    78:78:void run():815:815 -> run
-    79:79:com.jack8.floatwindow.Window.WindowStruct$constructionAndDeconstructionWindow com.jack8.floatwindow.Window.WindowStruct.access$400(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    79:79:void run():816 -> run
-    80:80:android.content.Context com.jack8.floatwindow.Window.WindowStruct.access$000(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    80:80:void run():816 -> run
-    81:82:void run():816:817 -> run
-    83:83:com.jack8.floatwindow.Window.WindowStruct$WindowAction com.jack8.floatwindow.Window.WindowStruct.access$1500(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    83:83:void run():817 -> run
-    84:85:void run():817:818 -> run
-    86:86:android.view.WindowManager com.jack8.floatwindow.Window.WindowStruct.access$1200(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    86:86:void run():818 -> run
-    87:87:android.view.View com.jack8.floatwindow.Window.WindowStruct.access$100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    87:87:void run():818 -> run
-    88:89:void run():818:819 -> run
-    90:90:android.view.View com.jack8.floatwindow.Window.WindowStruct.access$100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    90:90:void run():819 -> run
-    91:92:void run():819:820 -> run
-    93:93:android.view.View com.jack8.floatwindow.Window.WindowStruct.access$100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    93:93:void run():820 -> run
-    94:95:void run():820:821 -> run
-    96:96:void com.jack8.floatwindow.Window.WindowStruct.removeAllListener():1770:1770 -> run
-    96:96:void com.jack8.floatwindow.Window.WindowStruct.access$1600(com.jack8.floatwindow.Window.WindowStruct):38 -> run
+    56:56:void run():810 -> run
+    57:58:void com.jack8.floatwindow.Window.WindowStruct.invokeWindowStateChangeListener():1794:1795 -> run
+    57:58:void com.jack8.floatwindow.Window.WindowStruct.access$1300(com.jack8.floatwindow.Window.WindowStruct):38 -> run
+    57:58:void run():810 -> run
+    59:60:void run():811:812 -> run
+    61:61:android.view.ViewGroup com.jack8.floatwindow.Window.WindowStruct.access$500(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    61:61:void run():812 -> run
+    62:63:void run():812:813 -> run
+    64:64:android.view.ViewGroup com.jack8.floatwindow.Window.WindowStruct.access$500(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    64:64:void run():813 -> run
+    65:66:void run():813:814 -> run
+    67:67:android.view.ViewGroup com.jack8.floatwindow.Window.WindowStruct.access$500(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    67:67:void run():814 -> run
+    68:71:void run():814:817 -> run
+    72:72:android.view.WindowManager$LayoutParams com.jack8.floatwindow.Window.WindowStruct.access$1100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    72:72:void run():817 -> run
+    73:73:void run():817:817 -> run
+    74:74:android.view.WindowManager com.jack8.floatwindow.Window.WindowStruct.access$1200(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    74:74:void run():818 -> run
+    75:75:android.view.View com.jack8.floatwindow.Window.WindowStruct.access$100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    75:75:void run():818 -> run
+    76:78:void run():818:820 -> run
+    79:79:android.view.WindowManager com.jack8.floatwindow.Window.WindowStruct.access$1200(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    79:79:void run():820 -> run
+    80:80:android.view.View com.jack8.floatwindow.Window.WindowStruct.access$100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    80:80:void run():820 -> run
+    81:84:void run():820:823 -> run
+    85:85:com.jack8.floatwindow.Window.WindowStruct$constructionAndDeconstructionWindow com.jack8.floatwindow.Window.WindowStruct.access$400(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    85:85:void run():823 -> run
+    86:86:android.content.Context com.jack8.floatwindow.Window.WindowStruct.access$000(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    86:86:void run():823 -> run
+    87:87:android.view.View[] com.jack8.floatwindow.Window.WindowStruct.access$200(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    87:87:void run():823 -> run
+    88:88:int com.jack8.floatwindow.Window.WindowStruct.access$300(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    88:88:void run():823 -> run
+    89:90:void run():823:824 -> run
+    91:91:android.view.View[] com.jack8.floatwindow.Window.WindowStruct.access$200(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    91:91:void run():824 -> run
+    92:92:void run():824:824 -> run
+    93:93:com.jack8.floatwindow.Window.WindowStruct$constructionAndDeconstructionWindow com.jack8.floatwindow.Window.WindowStruct.access$400(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    93:93:void run():825 -> run
+    94:94:android.content.Context com.jack8.floatwindow.Window.WindowStruct.access$000(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    94:94:void run():825 -> run
+    95:95:void run():825:825 -> run
+    96:96:com.jack8.floatwindow.Window.WindowStruct$constructionAndDeconstructionWindow com.jack8.floatwindow.Window.WindowStruct.access$400(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    96:96:void run():826 -> run
+    97:97:android.content.Context com.jack8.floatwindow.Window.WindowStruct.access$000(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    97:97:void run():826 -> run
+    98:99:void run():826:827 -> run
+    100:100:com.jack8.floatwindow.Window.WindowStruct$WindowAction com.jack8.floatwindow.Window.WindowStruct.access$1500(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    100:100:void run():827 -> run
+    101:102:void run():827:828 -> run
+    103:103:android.view.WindowManager com.jack8.floatwindow.Window.WindowStruct.access$1200(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    103:103:void run():828 -> run
+    104:104:android.view.View com.jack8.floatwindow.Window.WindowStruct.access$100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    104:104:void run():828 -> run
+    105:106:void run():828:829 -> run
+    107:107:android.view.View com.jack8.floatwindow.Window.WindowStruct.access$100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    107:107:void run():829 -> run
+    108:109:void run():829:830 -> run
+    110:110:android.view.View com.jack8.floatwindow.Window.WindowStruct.access$100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    110:110:void run():830 -> run
+    111:112:void run():830:831 -> run
+    113:113:void com.jack8.floatwindow.Window.WindowStruct.removeAllListener():1784:1784 -> run
+    113:113:void com.jack8.floatwindow.Window.WindowStruct.access$1600(com.jack8.floatwindow.Window.WindowStruct):38 -> run
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    96:96:void run():821 -> run
-    97:100:void com.jack8.floatwindow.Window.WindowStruct.removeAllListener():1770:1773 -> run
-    97:100:void com.jack8.floatwindow.Window.WindowStruct.access$1600(com.jack8.floatwindow.Window.WindowStruct):38 -> run
-    97:100:void run():821 -> run
-    101:102:void run():822:823 -> run
-    103:103:void com.jack8.floatwindow.Window.WindowManager.removeWindowStruct(com.jack8.floatwindow.Window.WindowStruct):50:50 -> run
-    103:103:void run():824 -> run
-    104:104:void run():826:826 -> run
-    105:105:android.view.ViewGroup com.jack8.floatwindow.Window.WindowStruct.access$502(com.jack8.floatwindow.Window.WindowStruct,android.view.ViewGroup):38:38 -> run
-    105:105:void run():826 -> run
-    106:106:android.view.View[] com.jack8.floatwindow.Window.WindowStruct.access$202(com.jack8.floatwindow.Window.WindowStruct,android.view.View[]):38:38 -> run
-    106:106:void run():827 -> run
-    107:107:android.view.View com.jack8.floatwindow.Window.WindowStruct.access$102(com.jack8.floatwindow.Window.WindowStruct,android.view.View):38:38 -> run
-    107:107:void run():828 -> run
-    108:108:com.jack8.floatwindow.Window.WindowStruct$WindowAction com.jack8.floatwindow.Window.WindowStruct.access$1502(com.jack8.floatwindow.Window.WindowStruct,com.jack8.floatwindow.Window.WindowStruct$WindowAction):38:38 -> run
-    108:108:void run():829 -> run
-    109:109:com.jack8.floatwindow.Window.WindowStruct$constructionAndDeconstructionWindow com.jack8.floatwindow.Window.WindowStruct.access$402(com.jack8.floatwindow.Window.WindowStruct,com.jack8.floatwindow.Window.WindowStruct$constructionAndDeconstructionWindow):38:38 -> run
-    109:109:void run():830 -> run
-    110:110:com.jack8.floatwindow.Window.WindowStruct$ScreenSize com.jack8.floatwindow.Window.WindowStruct.access$1702(com.jack8.floatwindow.Window.WindowStruct,com.jack8.floatwindow.Window.WindowStruct$ScreenSize):38:38 -> run
-    110:110:void run():831 -> run
-    111:111:void run():832:832 -> run
-    112:112:void run():794:794 -> run
-    113:113:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$900(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    113:113:void run():794 -> run
-    114:115:void run():794:795 -> run
-    116:116:android.view.WindowManager$LayoutParams com.jack8.floatwindow.Window.WindowStruct.access$1100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    116:116:void run():795 -> run
-    117:117:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$900(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    117:117:void run():795 -> run
-    118:119:void run():795:796 -> run
-    120:120:android.view.WindowManager$LayoutParams com.jack8.floatwindow.Window.WindowStruct.access$1100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    120:120:void run():796 -> run
-    121:121:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$900(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    121:121:void run():796 -> run
-    122:124:void run():796:798 -> run
-    125:125:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$1000(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    125:125:void run():798 -> run
-    126:127:void run():798:799 -> run
-    128:128:android.view.View com.jack8.floatwindow.Window.WindowStruct.access$100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    128:128:void run():799 -> run
+    113:113:void run():831 -> run
+    114:117:void com.jack8.floatwindow.Window.WindowStruct.removeAllListener():1784:1787 -> run
+    114:117:void com.jack8.floatwindow.Window.WindowStruct.access$1600(com.jack8.floatwindow.Window.WindowStruct):38 -> run
+    114:117:void run():831 -> run
+    118:119:void run():832:833 -> run
+    120:120:void com.jack8.floatwindow.Window.WindowManager.removeWindowStruct(com.jack8.floatwindow.Window.WindowStruct):50:50 -> run
+    120:120:void run():834 -> run
+    121:121:void run():836:836 -> run
+    122:122:android.view.ViewGroup com.jack8.floatwindow.Window.WindowStruct.access$502(com.jack8.floatwindow.Window.WindowStruct,android.view.ViewGroup):38:38 -> run
+    122:122:void run():836 -> run
+    123:123:android.view.View[] com.jack8.floatwindow.Window.WindowStruct.access$202(com.jack8.floatwindow.Window.WindowStruct,android.view.View[]):38:38 -> run
+    123:123:void run():837 -> run
+    124:124:android.view.View com.jack8.floatwindow.Window.WindowStruct.access$102(com.jack8.floatwindow.Window.WindowStruct,android.view.View):38:38 -> run
+    124:124:void run():838 -> run
+    125:125:com.jack8.floatwindow.Window.WindowStruct$WindowAction com.jack8.floatwindow.Window.WindowStruct.access$1502(com.jack8.floatwindow.Window.WindowStruct,com.jack8.floatwindow.Window.WindowStruct$WindowAction):38:38 -> run
+    125:125:void run():839 -> run
+    126:126:com.jack8.floatwindow.Window.WindowStruct$constructionAndDeconstructionWindow com.jack8.floatwindow.Window.WindowStruct.access$402(com.jack8.floatwindow.Window.WindowStruct,com.jack8.floatwindow.Window.WindowStruct$constructionAndDeconstructionWindow):38:38 -> run
+    126:126:void run():840 -> run
+    127:127:com.jack8.floatwindow.Window.WindowStruct$ScreenSize com.jack8.floatwindow.Window.WindowStruct.access$1702(com.jack8.floatwindow.Window.WindowStruct,com.jack8.floatwindow.Window.WindowStruct$ScreenSize):38:38 -> run
+    127:127:void run():841 -> run
+    128:128:void run():842:842 -> run
     129:129:void run():799:799 -> run
-    130:130:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$1000(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    130:130:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$900(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
     130:130:void run():799 -> run
     131:132:void run():799:800 -> run
-    133:133:android.view.View com.jack8.floatwindow.Window.WindowStruct.access$100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    133:133:android.view.WindowManager$LayoutParams com.jack8.floatwindow.Window.WindowStruct.access$1100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
     133:133:void run():800 -> run
-    134:134:void run():800:800 -> run
-    135:135:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$1000(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    135:135:void run():800 -> run
-    136:138:void run():800:802 -> run
-    139:139:android.view.WindowManager com.jack8.floatwindow.Window.WindowStruct.access$1200(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    139:139:void run():802 -> run
-    140:140:android.view.View com.jack8.floatwindow.Window.WindowStruct.access$100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    140:140:void run():802 -> run
-    141:141:android.view.WindowManager$LayoutParams com.jack8.floatwindow.Window.WindowStruct.access$1100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
-    141:141:void run():802 -> run
-    142:143:void run():802:803 -> run
+    134:134:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$900(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    134:134:void run():800 -> run
+    135:136:void run():800:801 -> run
+    137:137:android.view.WindowManager$LayoutParams com.jack8.floatwindow.Window.WindowStruct.access$1100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    137:137:void run():801 -> run
+    138:138:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$900(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    138:138:void run():801 -> run
+    139:141:void run():801:803 -> run
+    142:142:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$1000(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    142:142:void run():803 -> run
+    143:144:void run():803:804 -> run
+    145:145:android.view.View com.jack8.floatwindow.Window.WindowStruct.access$100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    145:145:void run():804 -> run
+    146:146:void run():804:804 -> run
+    147:147:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$1000(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    147:147:void run():804 -> run
+    148:149:void run():804:805 -> run
+    150:150:android.view.View com.jack8.floatwindow.Window.WindowStruct.access$100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    150:150:void run():805 -> run
+    151:151:void run():805:805 -> run
+    152:152:android.widget.Scroller com.jack8.floatwindow.Window.WindowStruct.access$1000(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    152:152:void run():805 -> run
+    153:155:void run():805:807 -> run
+    156:156:android.view.WindowManager com.jack8.floatwindow.Window.WindowStruct.access$1200(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    156:156:void run():807 -> run
+    157:157:android.view.View com.jack8.floatwindow.Window.WindowStruct.access$100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    157:157:void run():807 -> run
+    158:158:android.view.WindowManager$LayoutParams com.jack8.floatwindow.Window.WindowStruct.access$1100(com.jack8.floatwindow.Window.WindowStruct):38:38 -> run
+    158:158:void run():807 -> run
+    159:160:void run():807:808 -> run
 com.jack8.floatwindow.Window.WindowStruct$ScreenSize -> com.jack8.floatwindow.Window.WindowStruct$ScreenSize:
     1:2:void <init>(android.content.Context):589:590 -> <init>
     1:6:int getNavigationBarHeight():611:616 -> getNavigationBarHeight

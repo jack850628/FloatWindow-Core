@@ -769,15 +769,20 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
     }
 
     private class RunTransitions implements Runnable{//執行轉場動畫
-        private State state;
+        private State state, previousState;
 
-        public RunTransitions(State state){
+        public RunTransitions(State state, State previousState){
             this.state = state;
+            this.previousState = previousState;
         }
 
         @Override
         public void run() {
             if(state != nowState){//當transitionsDuration很大時，使用者很有機會在轉場動畫還沒播完時就按下其他狀態按鈕
+                if(nowState != State.MINI && nowState != State.HIDE && (previousState == State.MINI || previousState == State.HIDE)){
+                    wincon.getLayoutParams().height = ViewGroup.LayoutParams.MATCH_PARENT;
+                    wincon.getLayoutParams().width = ViewGroup.LayoutParams.MATCH_PARENT;
+                }
                 return;//當轉場動畫還沒播完時狀態就改變時，取消狀態就改變前動畫
             }
             if (transitionsDuration == 0) {
@@ -803,6 +808,11 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
                 Utilities.uiThread.post(this);
             } else {
                 invokeWindowStateChangeListener();
+                if(previousState == State.MINI || previousState == State.HIDE){
+                    wincon.getLayoutParams().height = ViewGroup.LayoutParams.MATCH_PARENT;
+                    wincon.getLayoutParams().width = ViewGroup.LayoutParams.MATCH_PARENT;
+                    wincon.requestLayout();
+                }
                 if (state == State.HIDE) {
                     wmlp.alpha = 0.0f;
                     wm.updateViewLayout(winform, wmlp);
@@ -865,6 +875,8 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
             previousState = nowState;
             nowState = State.MINI;
             setWindowButtonsSize(this.buttonHeightForMiniState, this.buttonsWidth);
+            wincon.getLayoutParams().height = wincon.getHeight();
+            wincon.getLayoutParams().width = wincon.getWidth();
             if(!topMini.isFinished())
                 topMini.abortAnimation();
             if(!heightMini.isFinished())
@@ -897,7 +909,7 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
             wmlp.alpha = 1.0f;
             wm.updateViewLayout(winform, wmlp);
             hideButtons();
-            Utilities.uiThread.post(new RunTransitions(nowState));
+            Utilities.uiThread.post(new RunTransitions(nowState, previousState));
         }
     }
 
@@ -944,7 +956,7 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
             wmlp.alpha =1.0f;
             wm.updateViewLayout(winform, wmlp);
             setDisplayObject();
-            Utilities.uiThread.post(new RunTransitions(nowState));
+            Utilities.uiThread.post(new RunTransitions(nowState, previousState));
         }
     }
 
@@ -996,7 +1008,7 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
             wmlp.alpha =1.0f;
             wm.updateViewLayout(winform, wmlp);
             setDisplayObject();
-            Utilities.uiThread.post(new RunTransitions(nowState));
+            Utilities.uiThread.post(new RunTransitions(nowState, previousState));
         }
     }
 
@@ -1008,6 +1020,8 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
             previousState = nowState;
             nowState = State.HIDE;
             setWindowButtonsSize(this.buttonsHeight, this.buttonsWidth);
+            wincon.getLayoutParams().height = wincon.getHeight();
+            wincon.getLayoutParams().width = wincon.getWidth();
             if(!topMini.isFinished())
                 topMini.abortAnimation();
             if(!heightMini.isFinished())
@@ -1036,7 +1050,7 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
             wmlp.flags = NO_FOCUS_FLAGE;
             wm.updateViewLayout(winform, wmlp);
             windowAction.goHide(this);
-            Utilities.uiThread.post(new RunTransitions(nowState));
+            Utilities.uiThread.post(new RunTransitions(nowState, previousState));
         }
     }
 
@@ -1079,7 +1093,7 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
             wmlp.alpha =1.0f;
             wm.updateViewLayout(winform, wmlp);
             setDisplayObject();
-            Utilities.uiThread.post(new RunTransitions(nowState));
+            Utilities.uiThread.post(new RunTransitions(nowState, previousState));
         }
     }
 
@@ -1130,7 +1144,7 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
                 heightMini.startScroll(screenSize.getWidth(), screenSize.getHeight()
                         , -screenSize.getWidth(), -(screenSize.getHeight()), transitionsDuration);
             }
-            Utilities.uiThread.post(new RunTransitions(nowState));
+            Utilities.uiThread.post(new RunTransitions(nowState, previousState));
         }
     }
 
