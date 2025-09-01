@@ -8,7 +8,7 @@
             android:name=".Window.FullscreenWindowActivity"
             android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|keyboard|density|navigation|smallestScreenSize|uiMode"
             android:resizeableActivity="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/Theme.AppCompat.FW_NoActionBar">
             <meta-data android:name="WindowManagerPreference:FreeformWindowSize"
                 android:value="[phone|tablet|maximize]" />
             <meta-data android:name="WindowManagerPreference:FreeformWindowOrientation"
