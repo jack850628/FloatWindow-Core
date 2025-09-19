@@ -357,7 +357,7 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
      * @param CDAW 浮動視窗初始化與結束時的事件
      */
     public WindowStruct(Context context, android.view.WindowManager wm, View[] windowPages, String[] windowPageTitles , Map<String, Object> windowInitArgs , int Top, int Left, int Height, int Width, int buttonsHeight, int buttonsWidth, int sizeBarHeight, int buttonHeightForMiniState, int buttonWidthForMiniState, final int display_object, int transitionsDuration, ScreenSize screenSize, WindowAction windowAction, constructionAndDeconstructionWindow CDAW, int parentWindowNumber, State openState){
-        if(WindowManager.windowList.containsKey(WindowManager.focusedWindowNumber))
+        if(WindowManager.windowIn(WindowManager.focusedWindowNumber))
             WindowManager.getWindowStruct(WindowManager.focusedWindowNumber).unFocusWindow();
         WindowManager.focusedWindowNumber = this.Number = WindowManager.getMiniFreeNumber();
         Log.d("new window id", String.valueOf(this.Number));
@@ -542,7 +542,7 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
         }
         //---------------------------------------------------------------------------------------------
         this.parentWindowNumber = parentWindowNumber;
-        if(parentWindowNumber != -1)
+        if(parentWindowNumber != -1 && WindowManager.windowIn(parentWindowNumber))
             WindowManager.getWindowStruct(parentWindowNumber).subWindowNumbers.add(Number);
         CDAW.onFocus(context, this);//防止視窗閃爍，所以不呼叫focusWindow()
     }
@@ -1105,7 +1105,11 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
             previousState = nowState;
             nowState = State.CLOSE;
             titleBarAndButtons.getLayoutParams().height = buttonsHeight;
-            if(parentWindowNumber != -1)
+            if(
+                    parentWindowNumber != -1
+                    &&
+                    WindowManager.windowIn(parentWindowNumber)//子視窗有可能是在父視窗在執行Deconstruction前的最後一刻由腳本創建(例如：網頁瀏覽器的javascript)，導致子視窗建立建立後，父視窗就已經被銷毀成了孤兒視窗。
+            )
                 WindowManager.getWindowStruct(this.parentWindowNumber).subWindowNumbers.remove(Number);
             for(int key : this.subWindowNumbers.toArray(new Integer[this.subWindowNumbers.size()]))
                 if(WindowManager.windowIn(key))
@@ -1300,8 +1304,10 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
             CDAW.onFocus(context, this);
         }
         if(eachSubWindow) {
-            for (int key : this.subWindowNumbers)
-                WindowManager.getWindowStruct(key).focusWindow(true);
+            for (int key : this.subWindowNumbers) {
+                if (WindowManager.windowIn(key))
+                    WindowManager.getWindowStruct(key).focusWindow(true);
+            }
         }
     }
 
@@ -1329,8 +1335,10 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
             intent.setData(Uri.parse(String.valueOf(getNumber())));//一定要setData才能找出經用過這組Intent開啟過的Activity
             context.startActivity(intent);
         }
-        for(int key : this.subWindowNumbers)
-            WindowManager.getWindowStruct(key).focusAndShowWindow();
+        for(int key : this.subWindowNumbers) {
+            if(WindowManager.windowIn(key))
+                WindowManager.getWindowStruct(key).focusAndShowWindow();
+        }
     }
 
     /**
@@ -1678,8 +1686,10 @@ public class WindowStruct implements View.OnClickListener,View.OnTouchListener{
      */
     public ArrayList<WindowStruct> getSubWindow(){
         ArrayList<WindowStruct> subWindows = new ArrayList<>();
-        for(int key : this.subWindowNumbers)
-            subWindows.add(WindowManager.getWindowStruct(key));
+        for(int key : this.subWindowNumbers) {
+            if(WindowManager.windowIn(key))
+                subWindows.add(WindowManager.getWindowStruct(key));
+        }
         return subWindows;
     }
 
